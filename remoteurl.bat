@@ -3,6 +3,6 @@ set /p remoteurl=<temp_file.h
 setlocal enabledelayedexpansion
 set "remoteurl=!remoteurl:.git=!"
 set remotemacro=#define REMOTE_URL "%remoteurl:~%"
-echo #pragma once > Remote.h
-echo %remotemacro% >> Remote.h
+echo #pragma once > src/Remote.h
+echo %remotemacro% >> src/Remote.h
 del temp_file.h
