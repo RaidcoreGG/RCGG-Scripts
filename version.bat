@@ -1,6 +1,6 @@
 WMIC.EXE Alias /? >NUL 2>&1 || GOTO s_error
 
-FOR /F "skip=1 tokens=1-6" %%G IN ('WMIC Path Win32_LocalTime Get Day^,Hour^,Minute^,Month^,Second^,Year /Format:table') DO (
+FOR /F "skip=1 tokens=1-6" %%G IN ('WMIC Path win32_utctime Get Day^,Hour^,Minute^,Month^,Second^,Year /Format:table') DO (
    IF "%%~L"=="" goto s_done
       Set _yyyy=%%L
       Set _mm=%%J
